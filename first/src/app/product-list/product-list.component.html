@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="table table-hover">
+        <thead>
+            <tr>
+                <td>productId</td>
+                <td>name</td>
+                <td>price</td>
+                <td>IsInStock</td>
+                <td>photo</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let items of products">
+                <td>{{items.productId}}</td>
+                <td>{{items.name}}</td>
+                <td>{{items.price}}</td>
+                <td>{{items.IsInStock}}</td>
+                <td>{{items.photo}}</td>
+            </tr>
+        </tbody>
+    </div>
+</div>

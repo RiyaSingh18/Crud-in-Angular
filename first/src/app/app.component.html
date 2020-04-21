@@ -1,0 +1,45 @@
+
+<div class="container-fluid">
+    <div class="form-group">
+        <form #frmRegister="ngForm" method="Post" (submit)="RegisterProduct(frmRegister.value)">
+            <dl>
+                <dt>productId</dt>
+                <dd><input type="number"name="productId" ngModel #productId="ngModel"class="form-control"></dd>
+                <dt>name</dt>
+                <dd><input type="text"name="name"ngModel #name="ngModel"class="form-control"></dd>
+                <dt>price</dt>
+                <dd><input type="number"name="price"ngModel #price="ngModel"class="form-control"></dd>
+                <dt>IsInStock</dt>
+                <dd><input type="text"name="IsInStock" ngModel #IsInStock="ngModel"class="form-control"></dd>
+                <dt>photo</dt>
+                <dd><input type="text"name="photo" ngModel #photo="ngModel"class="form-control"></dd>
+            </dl>
+            <button class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    <h2>Products Data</h2>
+  <div class="table table-hover">
+      <thead>
+          <tr>
+              <td>productId</td>
+              <td>name</td>
+              <td>price</td>
+              <td>IsInStock</td>
+              <td>photo</td>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let items of products ;let i=index">
+              <td>{{items.productId}}</td>
+              <td>{{items.name}}</td>
+              <td>{{items.price}}</td>
+              <td>{{items.IsInStock}}</td>
+              <td>{{items.photo}}</td>
+              <td><button class="btn btn-danger" (click)="deleteProduct(i)">Delete</button></td>
+              <td><button class="btn btn-success">Edit</button></td>
+          </tr>
+      </tbody>
+  </div>
+</div>
+
+
